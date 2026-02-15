@@ -1,0 +1,53 @@
+@use '../abstracts/vars' as *;
+
+:root {
+  // base
+  section[id] {
+    scroll-margin-top: var(--nav-height); // section header visible despite the fixed header
+  }
+  --shadow-rgb: #{$clr-black-rgb};
+  --border-base: #{$clr-gray-300};
+  --status-error: #{$clr-red-500};
+  --status-success: #{$clr-green-600};
+
+  // TYPOGRAPHY =================================================
+  --txt-primary: #{$clr-gray-800}; // headings, body, paragraphs
+  --txt-secondary: #{$clr-gray-500}; // description, metadata
+  --txt-muted: #{$clr-gray-400}; // placeholders
+  --txt-hover: #{$clr-gray-500};
+  --txt-on-dark: #{$clr-white};
+
+  // font sizes
+  --fs-base: #{$fs-base};
+  --fs-s: #{$fs-s};
+  --fs-md: #{$fs-md};
+  --fs-lg: #{$fs-lg};
+  --fs-xl: #{$fs-xl};
+
+  // line heights
+  --lh-tight: #{$lh-tight};
+
+  // background & surface
+  --bg-page: #{$clr-gray-100};
+  --bg-section: #{$clr-gray-100};
+  // HERO ===================================================
+  --hero-focus-shadow: 0 0 3px rgba(var(--shadow-rgb), 0.24);
+
+  // NAVBAR =================================================
+  --nav-height: 3rem;
+  --nav-bg: #{$clr-slate-100};
+  --nav-shadow: 0 2px 10px rgba(var(--shadow-rgb), 0.1);
+  --nav-link-color: var(--txt-primary);
+  --nav-link-hover: var(--txt-hover);
+  --nav-link-font-size: var(--fs-md);
+  --nav-link-weight: #{$f-wght-bold};
+  --nav-transition: #{$transition-normal};
+
+  // FORMS =================================================
+  --form-input-placeholder: var(--txt-muted);
+  --form-input-focus: #{$clr-gray-950}; // form border focus
+  --form-input-success: var(--status-success);
+  --form-input-error: var(--status-error);
+  --form-input-txt: var(--txt-primary);
+  --form-label: var(--txt-primary);
+}

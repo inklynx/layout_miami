@@ -6,17 +6,115 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Miami</title>
+    <title>BOSE Landing</title>
+    <link rel="icon"
+          href="/src/images/bose-fav.svg"
+          type="image/svg+xml" />
     <link
       rel="stylesheet"
-      href="src/styles/main.scss"
+      href="/src/styles/main.scss"
     />
     <script
-      src="src/scripts/main.js"
       defer
+      src="/src/scripts/main.js"
     ></script>
   </head>
   <body>
-    <h1>Miami</h1>
+
+    <header class="header">
+      <div class="header__container">
+        <a href="/"
+          class="header__logo-link">
+          <img
+          src="/src/images/hero-logo.svg"
+          alt="Bose Home"
+          class="header__logo"
+          />
+        </a>
+
+        <div class="header__actions">
+          <a
+            href="tel:+1 234 555-55-55"
+            class="header__phone-link"
+            aria-label="Call us">
+            <img
+              src="/src/images/header-phone.svg"
+              alt=" "
+              class="header__phone-icon"
+              aria-hidden="true"
+            />
+          </a>
+
+          <button
+            type="button"
+            class="burger"
+            aria-controls="main-menu"
+            aria-expanded="false"
+            aria-label="Menu"
+          >
+            <div class="burger__wrapper">
+              <img
+                src="/src/images/menu.svg"
+                alt=" "
+                aria-hidden="true"
+                class="burger__icon burger__icon--default"
+              />
+              <img
+                src="/src/images/menu-hover.svg"
+                alt=" "
+                aria-hidden="true"
+                class="burger__icon burger__icon--hover"
+              />
+              <img
+                src="/src/images/menu-x.svg"
+                alt=" "
+                aria-hidden="true"
+                class="burger__icon burger__icon--close"
+              />
+            </div>
+          </button>
+
+          <nav
+            id="main-menu"
+            class="menu">
+            <ul class="menu__list">
+              <li><a href="#home" class="menu__link">home</a></li>
+              <li><a href="#recommanded" class="menu__link">recommended</a></li>
+              <li><a href="#categories" class="menu__link">categories</a></li>
+              <li><a href="#how-to-buy" class="menu__link">how-to-buy</a></li>
+              <li><a href="#contacts" class="menu__link">contacts</a></li>
+            </ul>
+            <div class="menu__contact">
+              <a href="tel:+1 234 555-55-55" class="menu__link menu__tel">
+                <span class="menu__tel-number">+1 234 555-55-55</span>
+                <span class="menu__tel-label">call-to-order</span>
+              </a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__content">
+            <img
+              src="/src/images/hero-icon-sound-waves.svg"
+              alt=" "
+              aria-hidden="true"
+              class="hero__icon"
+            />
+            <h1 class="hero__title">
+              The world shades.
+              <br />
+              Your music shines.
+            </h1>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
   </body>
 </html>

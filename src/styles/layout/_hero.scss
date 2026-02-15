@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: flex-end;
+  background: url('../images/photos/hero-girl-mobile.jpg') center/cover no-repeat;
+  color: var(--txt-primary);
+
+  &::before {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba($clr-white, $alpha: 0.20) 0%,
+      rgba($clr-white, $alpha: 0.08) 50%,
+      transparent 85%
+    );
+    z-index: 1;
+  }
+
+  &__container {
+    padding: 2rem 1.6rem 2.6rem;
+    z-index: 2;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-weight: $f-wght-black;
+    font-style: italic;
+  }
+
+  &__icon {
+    width: 54px;
+    margin-left: 4px;
+  }
+}

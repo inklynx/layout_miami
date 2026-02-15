@@ -1,0 +1,11 @@
+@use '../abstracts/vars' as *;
+
+%heading-base {
+  font-family: $font-primary;
+  color: var(--txt-primary);
+  line-height: var(--lh-tight);
+  font-weight: $f-wght-bold;
+  letter-spacing: $ls-tight;
+}
+
+

@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+h1 {
+  @extend %heading-base;
+
+  font-size: var(--fs-xl);
+}
+
+h2 {
+  @extend %heading-base;
+
+  font-size: var(--fs-lg);
+}
+
+h3 {
+  @extend %heading-base;
+
+  font-size: var(--fs-md);
+}

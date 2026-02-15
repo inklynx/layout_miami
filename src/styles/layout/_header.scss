@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+@use '../base' as *;
+
+.header {
+  position: fixed; // TODO: try sticky
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+
+  &__container {
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  &__logo {
+    width: clamp(140px, 25vw, 250px);
+    position: relative;
+    z-index: 201;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__phone-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1; // prevents the icon from moving
+  }
+
+  &__phone-icon {
+    // TODO: try display: block;
+
+    width: 26px;
+    height: auto;
+    flex-shrink: 0;
+    transition: transform $transition-fast;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
