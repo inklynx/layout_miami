@@ -6,40 +6,139 @@
   min-height: 100dvh;
   display: flex;
   align-items: flex-end;
-  background: url('../images/photos/hero-girl-mobile.jpg') center/cover no-repeat;
+  padding-bottom: var(--hero-container-padding);
   color: var(--txt-primary);
+  isolation: isolate;
+  overflow: hidden;
+
+  @include mq('md') {
+    padding-bottom: calc(var(--hero-container-padding) + 4vw);
+  }
+
+  @include mq('lg') {
+    padding-bottom: calc(var(--hero-container-padding) + 6vh);
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    padding-bottom: calc(var(--hero-container-padding) + 5vw);
+  }
+
+  // --- HERO BG COVER (heading readability) ---
 
   &::before {
     position: absolute;
     content: '';
     inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba($clr-white, $alpha: 0.20) 0%,
-      rgba($clr-white, $alpha: 0.08) 50%,
-      transparent 85%
-    );
+    background: var(--hero-gradient-overlay);
     z-index: 1;
+    pointer-events: none;
   }
 
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+
+    @include mq('md') {
+      scale: 1.1;
+    }
+
+    @include mq('md') {
+      scale: 1;
+    }
+
+    @media (min-width: 820px) and (max-width: 1024px) and (orientation: portrait) {
+      scale: 1.2;
+    }
+  }
+
+  // -------------------------------------------------
+  //      H1 + ICON CONTAINER
+  // -------------------------------------------------
+
   &__container {
-    padding: 2rem 1.6rem 2.6rem;
+    position: relative;
     z-index: 2;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--hero-content-gap);
+    grid-column: 1 / span 2;
+
+    @include mq('md') {
+      grid-column: 1 / span 5;
+      gap: calc(var(--hero-content-gap) + #{rem(24)});
+    }
+
+    @include mq('lg') {
+      grid-column: 1 / span 9;
+      gap: calc(var(--hero-content-gap) + #{rem(36)});
+    }
   }
 
-  &__title {
-    font-weight: $f-wght-black;
+  &__display-text {
+    font-size: var(--hero-font-size);
+    font-weight: var(--wght-black);
     font-style: italic;
+
+    @media (min-width: 840px) and (max-width: 1024px) and (orientation: portrait) {
+      font-size: calc(var(--hero-font-size) + 0.5vw);
+    }
   }
 
-  &__icon {
-    width: 54px;
-    margin-left: 4px;
+  &__soundwave {
+    width: var(--hero-icon-width);
+    max-width: 6rem;
+    margin-left: var(--hero-icon-shift);
+  }
+}
+
+// ------------------------------------------------------
+//      SOUNDWAVE ANIMATION
+// ------------------------------------------------------
+
+.wave-bar {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.wave-bar.is-animating {
+  animation: wave-flicker 2s cubic-bezier(0.4, 0, 0.2, 1) var(--delay, 0s)
+    forwards;
+}
+
+@keyframes wave-flicker {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: var(--target-opacity, 0.4);
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: var(--target-opacity, 0.7);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-bar {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
   }
 }

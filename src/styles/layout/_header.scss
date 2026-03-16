@@ -2,53 +2,152 @@
 @use '../base' as *;
 
 .header {
-  position: fixed; // TODO: try sticky
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--nav-height);
-  background: var(--nav-bg);
-  backdrop-filter: blur(8px);
   z-index: 200;
+  padding: var(--header-padding); // removed fixed nav-height
+  background: var(--header-bg);
+  transition:
+    background-color var(--transition-normal),
+    backdrop-filter var(--transition-normal),
+    padding var(--transition-normal);
 
-  &__container {
-    max-width: 1440px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    padding: 20px;
+  @media (hover: hover) {
+    &:hover:not(.menu-is-open &) {
+      background-color: rgba($clr-white, 0.4);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--header-shadow-hover);
+    }
   }
 
-  &__logo {
-    width: clamp(140px, 25vw, 250px);
-    position: relative;
-    z-index: 201;
+  &.is-scrolled:not(.menu-is-open &) {
+    background-color: var(--header-bg-hover);
+    box-shadow: var(--header-shadow-hover);
   }
 
-  &__actions {
-    display: flex;
-    gap: 30px;
-    align-items: center;
+  &__phone-icon {
+    width: var(--header-phone-icon-width);
+    height: auto;
+    flex-shrink: 0;
+    display: block;
+    z-index: 2;
+    transition: transform var(--transition-normal);
+
+    @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+      width: 3vw;
+    }
+
+    // :hover {
+    //   transform: scale(1.03);
+    // }
   }
 
   &__phone-link {
     display: flex;
     align-items: center;
     text-decoration: none;
-    line-height: 1; // prevents the icon from moving
-  }
+    padding: 0.5rem;
+    transition: transform var(--transition-normal);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 
-  &__phone-icon {
-    // TODO: try display: block;
+    &:active {
+      transform: scale(0.97);
+    }
 
-    width: 26px;
-    height: auto;
-    flex-shrink: 0;
-    transition: transform $transition-fast;
+    .header__phone-number {
+      display: none;
+      overflow: hidden;
+      color: var(--txt-primary);
+      font-weight: var(--wght-bold);
+      font-size: var(--header-font-size);
+      letter-spacing: var(--l-spacing-wide);
+      white-space: nowrap;
+      padding-top: #{rem(3)}; // optical correction | translateY doesn't works
+
+      @include mq('lg') {
+        display: block;
+        opacity: 0;
+        transform: translateX(#{rem(20)});
+        transition:
+          opacity var(--transition-normal),
+          transform var(--transition-normal);
+        margin-right: 0.8rem;
+        pointer-events: none;
+      }
+    }
 
     &:hover {
-      transform: scale(1.1);
+      .header__phone-number {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .header__phone-icon {
+        transform: scale(1.05);
+      }
     }
   }
+
+  &.menu-is-open {
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    background-color: var(
+      --header-bg
+    ) !important; // in this case !important using cnowingly
+
+    .header__phone-link {
+      visibility: hidden;
+    }
+  }
+
+  @include mq('md') {
+    padding: var(--header-padding-md);
+  }
+
+  @include mq('lg') {
+    padding: var(--header-padding-lg);
+  }
+
+  @media (min-width: 840px) and (max-width: 1024px) and (orientation: portrait) {
+    padding: #{rem(40)} 0 #{rem(40)};
+  }
+
+  // --- MAIN CONTAINER ---
+  &__container {
+    align-items: center;
+  }
+
+  &__logo {
+    height: var(--header-logo-height);
+    max-width: #{rem(170)};
+    margin-left: #{rem(-4)};
+    position: relative;
+    align-self: center;
+    z-index: 201;
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--header-actions-gap);
+    align-items: center;
+    justify-content: flex-end;
+    grid-column: 2 / span 1;
+
+    @include mq('md') {
+      grid-column: 5 / span 2;
+    }
+
+    @include mq('lg') {
+      grid-column: -2 / span 2;
+    }
+  }
+
+  // &.menu-is-open {
+  //   .header__phone-link {
+  //     visibility: hidden;
+  //   }
+  // }
 }

@@ -1,11 +1,13 @@
 @use '../abstracts/vars' as *;
 
 %heading-base {
-  font-family: $font-primary;
-  color: var(--txt-primary);
+  font-family: #{$font-primary};
   line-height: var(--lh-tight);
-  font-weight: $f-wght-bold;
-  letter-spacing: $ls-tight;
+  font-weight: var(--wght-bold);
+  letter-spacing: var(--l-spacing-tight);
 }
 
-
+%link-base {
+  font-family: #{$font-primary};
+  text-decoration: none;
+}
