@@ -69,17 +69,12 @@ const toggleMenu = (forceClose = false) => {
   if (newState) {
     document.addEventListener('keydown', handleFocusTrap);
 
-    const handleTransitionEnd = (e) => {
-      if (e.propertyName === 'transform') {
-        const focusable = getFocusableElements();
-        focusable[0]?.focus();
-        menu.removeEventListener('transitionend', handleTransitionEnd);
-      }
-    };
-
-    menu.addEventListener('transitionend', handleTransitionEnd);
+    requestAnimationFrame(() => {
+      const focusable = getFocusableElements();
+      focusable[0]?.focus();
+    });
   } else {
-    document.removeEventListener('keydown', handleFocusTrap)
+    document.removeEventListener('keydown', handleFocusTrap);
   }
 };
 
@@ -188,7 +183,7 @@ function fisherYatesShuffle(array) {
 }
 
 // -------------------------------------------------
-//      SOUNDWAVE icon ANIMATION (TODO: rAF + offsetHeight)
+//      SOUNDWAVE icon ANIMATION (TODO: add rAF)
 // -------------------------------------------------
 
 const animateSoundwave = () => {
