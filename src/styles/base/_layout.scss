@@ -19,3 +19,9 @@
     grid-template-columns: repeat(12, 1fr);
   }
 }
+
+.section-title {
+  grid-column: 1 / -1;
+  padding: var(--page-section-padding-top) 0 var(--page-section-padding-bottom);
+  text-align: center;
+}

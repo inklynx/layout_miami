@@ -54,7 +54,7 @@
   //      BACKGROUND & SURFACE
   // -------------------------------------------------
 
-  --bg-page: #{$clr-gray-100};
+  --bg-page: #{$clr-white};
   --bg-section: #{$clr-gray-100};
 
   // -------------------------------------------------
@@ -72,7 +72,7 @@
   --fs-base: 1rem;
   --fs-s: #{fluid-calc(16px, 18px)};
   --fs-md: #{fluid-calc(20px, 22px)};
-  --fs-lg: #{fluid-calc(24px, 32px)};
+  --fs-lg: #{fluid-calc(32px, 36px)};
   --fs-xl: #{fluid-calc(32px, 60px)};
 
   // --- Line heights ---
@@ -90,7 +90,7 @@
   // --- Letter spacing ---
 
   --l-spacing-tight: -0.02em;
-  --l-spacing-wide: 0.07em;
+  --l-spacing-wide: 0.09em;
 
   // -------------------------------------------------
   //      GRID-CONTAINER
@@ -101,6 +101,8 @@
   --page-padding-mobile: #{rem(24)};
   --page-padding-tablet: #{rem(72)};
   --page-padding-desktop: #{rem(120)};
+  --page-section-padding-top: #{fluid-calc(64px, 100px)};
+  --page-section-padding-bottom: #{fluid-calc(16px, 32px)};
   --dynamic-margin: max(
     var(--page-padding-desktop),
     calc((100vw - var(--container-width)) / 2 + var(--page-padding-desktop))
@@ -176,6 +178,13 @@
     #{rgba($clr-white, $alpha: 0.1)} 50%,
     transparent 85%
   );
+
+  // -------------------------------------------------
+  //    PRODUCTS
+  // -------------------------------------------------
+
+  --card-img-width: #{fluid-calc(200px, 250px)};
+  --card-shadow-width: #{rem(100)};
 
   // -------------------------------------------------
   //    FORMS

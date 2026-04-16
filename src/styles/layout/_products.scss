@@ -1,9 +1,20 @@
 @use '../abstracts' as *;
+@use '../base' as *;
 
-// ----------------------------------
-// styles for products
-// ----------------------------------
+.products {
+  background: var(--bg-page);
+  min-height: 30vh;
+  position: relative;
+  padding-bottom: 100px;
 
-.selector-placeholder {
-  width: 100%;
+  &__grid {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: var(--gutter);
+    grid-template-columns: 1fr;
+
+    @include mq('lg') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
