@@ -2,7 +2,7 @@
 
 .grid-container {
   width: 100%;
-  max-width: var(--container-width);
+  max-width: var(--page-content-width);
   padding: 0 var(--page-padding-mobile);
   margin: 0 auto;
   display: grid;
@@ -20,8 +20,17 @@
   }
 }
 
-.section-title {
-  grid-column: 1 / -1;
-  padding: var(--page-section-padding-top) 0 var(--page-section-padding-bottom);
-  text-align: center;
+// -------------------------------------------------
+//    SECTION
+// -------------------------------------------------
+
+.section {
+  padding-top: #{fluid-calc(56px, 120px)};
+
+  &__title {
+    grid-column: 1 / -1;
+    text-align: center;
+    line-height: var(--lh-section-title);
+    padding-bottom: var(--page-title-padding);
+  }
 }

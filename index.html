@@ -108,7 +108,7 @@
             <div class="menu__container">
               <ul class="menu__list">
                 <li class="menu__item"><a href="#home" class="menu__link">home</a></li>
-                <li class="menu__item"><a href="#recommanded" class="menu__link">recommended</a></li>
+                <li class="menu__item"><a href="#recommended" class="menu__link">recommended</a></li>
                 <li class="menu__item"><a href="#categories" class="menu__link">categories</a></li>
                 <li class="menu__item"><a href="#how-to-buy" class="menu__link">how to buy</a></li>
                 <li class="menu__item"><a href="#contacts" class="menu__link">contacts</a></li>
@@ -252,27 +252,33 @@
       </section>
 
       <section
-        class="products">
+        class="products section"
+        id="recommended">
         <div
           class="grid-container">
           <h2
-            class="section-title">
+            class="section__title">
             Recommended
           </h2>
           <div
             class="products__grid">
             <article
               class="product-card">
-              <img
-                src="/src/images/photos/products-portable-smart-speaker.webp"
-                alt="Bose Portable Smart Speaker"
-                class="product-card__image"
-                loading="lazy">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/src/images/photos/products-portable-smart-speaker.webp"
+                  alt="Bose Portable Smart Speaker"
+                  class="product-card__image"
+                  loading="lazy"
+                  decoding="async"
+                  width="324"
+                  height="324">
+              </div>
               <div
                 class="product-card__info">
                 <h3
                   class="product-card__name">
-                  Bose portable Smart Speaker
+                  Portable Smart Speaker
                 </h3>
                 <p
                   class="product-card__category">
@@ -287,11 +293,16 @@
 
             <article
               class="product-card">
-              <img
-                src="/src/images/photos/products-soundlink-bt-speaker.webp"
-                alt="Bose Portable Smart Speaker"
-                class="product-card__image"
-                loading="lazy">
+              <div class="product-card__image-wrapper">
+                <img
+                  src="/src/images/photos/products-soundlink-bt-speaker.webp"
+                  alt="Bose Portable Smart Speaker"
+                  class="product-card__image"
+                  loading="lazy"
+                  decoding="async"
+                  width="324"
+                  height="324">
+              </div>
               <div
                 class="product-card__info">
                 <h3
@@ -312,11 +323,16 @@
             <article
               class="product-card">
               <div class="product-card__img-shadow">
-                <img
-                  src="/src/images/photos/products-color-bt-speaker.webp"
-                  alt="Bose Portable Smart Speaker"
-                  class="product-card__image"
-                  loading="lazy">
+                <div class="product-card__image-wrapper">
+                  <img
+                    src="/src/images/photos/products-color-bt-speaker.webp"
+                    alt="Bose Portable Smart Speaker"
+                    class="product-card__image"
+                    loading="lazy"
+                    decoding="async"
+                    width="324"
+                    height="324">
+                </div>
               </div>
               <div
                 class="product-card__info">
@@ -336,6 +352,144 @@
             </article>
           </div>
         </div>
+      </section>
+
+      <section
+        class="categories section grid-container"
+        id="categories">
+        <h2
+          class="section__title">
+          Browse Bose products
+          <br>
+          by category
+        </h2>
+
+        <article
+          class="categories__row categories__row--type-a">
+          <div
+            class="categories__images">
+            <div
+              class="categories__image-wrapper">
+              <img
+                src="/src/images/photos/gallery-girl-1.webp"
+                srcset="
+                  /src/images/photos/gallery-girl-1-mobile.webp 746w,
+                  /src/images/photos/gallery-girl-1.webp 1491w
+                "
+                sizes="(min-width: 1024px) 40.73vw, (min-width: 768px) 53.66vw, 41.87vw"
+                alt="Woman wearing Bose earbuds"
+                class="categories__image"
+                data-image="earbuds-girl-mobile-crop"
+                loading="lazy"
+                decoding="async"
+                width="1491"
+                height="497">
+            </div>
+            <div class="categories__image-wrapper">
+              <img
+                src="/src/images/photos/gallery-girl-2.webp"
+                srcset="
+                  /src/images/photos/gallery-girl-2-mobile.webp 500w,
+                  /src/images/photos/gallery-girl-2.webp 1000w
+                "
+                sizes="(min-width: 1024px) 20.36vw, (min-width: 768px) 26.83vw, 41.87vw"
+                alt="Woman wearing Bose QuietComfort headphones"
+                class="categories__image"
+                loading="lazy"
+                decoding="async"
+                width="1000"
+                height="1000">
+            </div>
+          </div>
+          <p
+            class="categories__caption">
+            Headphones & earbuds
+          </p>
+        </article>
+
+        <article
+          class="categories__row categories__row--type-c">
+          <div
+            class="categories__images">
+            <div
+              class="categories__image-wrapper">
+              <img
+                src="/src/images/photos/gallery-girl-3.webp"
+                srcset="
+                /src/images/photos/gallery-girl-3-mobile.webp 768w,
+                /src/images/photos/gallery-girl-3.webp 1920w
+                "
+                sizes="(min-width: 1024px) 30.52vw, (min-width: 768px) 40.16vw, 41.87vw"
+                alt="Portable Bose speaker"
+                class="categories__image"
+                loading="lazy"
+                decoding="async"
+                width="1920"
+                height="1080">
+            </div>
+            <div
+            class="categories__image-wrapper">
+              <img
+                src="/src/images/photos/gallery-speaker-4.webp"
+                srcset="
+                /src/images/photos/gallery-speaker-4-mobile.webp 768w,
+                /src/images/photos/gallery-speaker-4.webp 1600w
+                "
+                sizes="(min-width: 1024px) 30.52vw, (min-width: 768px) 40.16vw, 41.87vw"
+                alt="Bose Color Soundlink Portable speaker"
+                class="categories__image"
+                loading="lazy"
+                decoding="async"
+                width="1600"
+                height="900">
+            </div>
+          </div>
+          <p
+            class="categories__caption">
+            Speakers
+          </p>
+        </article>
+
+        <article
+          class="categories__row categories__row--type-b">
+          <div
+            class="categories__images">
+            <div
+              class="categories__image-wrapper">
+              <img
+                src="/src/images/photos/gallery-sunglasses-5.webp"
+                srcset="/src/images/photos/gallery-sunglasses-5.webp 460w"
+                sizes="(min-width: 1024px) 20.35vw, (min-width: 768px) 26.77vw, 41.87vw"
+                alt="Man wearing Bose Frames audio sunglasses"
+                class="categories__image"
+                loading="lazy"
+                decoding="async"
+                width="460"
+                height="299">
+            </div>
+            <div
+              class="categories__image-wrapper">
+              <img
+                src="/src/images/photos/gallery-sunglasses-6.webp"
+                srcset="
+                /src/images/photos/gallery-sunglasses-6-mobile.webp 768w,
+                /src/images/photos/gallery-sunglasses-6.webp 1280w
+                "
+                sizes="(min-width: 1024px) 40.7vw, (min-width: 768px) 53.55vw, 41.87vw"
+                alt="Girl wearing Bose Frames collection"
+                class="categories__image"
+                data-image="sunglasses-girl-mobile-crop"
+                loading="lazy"
+                decoding="async"
+                width="1280"
+                height="512">
+            </div>
+          </div>
+          <p
+            class="categories__caption">
+            Audio sunglasses
+          </p>
+        </article>
       </section>
     </main>
 

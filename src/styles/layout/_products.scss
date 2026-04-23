@@ -2,10 +2,9 @@
 @use '../base' as *;
 
 .products {
-  background: var(--bg-page);
+  background: var(--bg-section);
   min-height: 30vh;
   position: relative;
-  padding-bottom: 100px;
 
   &__grid {
     grid-column: 1 / -1;
@@ -14,7 +13,14 @@
     grid-template-columns: 1fr;
 
     @include mq('lg') {
+      grid-column: 2 / -2;
       grid-template-columns: repeat(3, 1fr);
+      gap: calc(var(--gutter) * 2);
+    }
+
+    @media (min-width: 1024px) and (orientation: portrait) {
+      grid-column: 1 / -1;
+      gap: var(--gutter);
     }
   }
 }

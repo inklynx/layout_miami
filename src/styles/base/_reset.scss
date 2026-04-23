@@ -17,8 +17,7 @@ body {
   background: var(--bg-page);
   line-height: var(--lh-base);
   min-height: 100dvh;
-
-  // overflow: hidden;
+  overflow-x: hidden;
 }
 
 ul,

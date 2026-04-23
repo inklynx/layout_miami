@@ -7,12 +7,12 @@
   left: 0;
   width: 100%;
   z-index: 200;
-  padding: var(--header-padding); // removed fixed nav-height
+  padding: var(--header-padding);
   background: var(--header-bg);
   transition:
-    background-color var(--transition-normal),
-    backdrop-filter var(--transition-normal),
-    padding var(--transition-normal);
+    background-color var(--transition-emphasis),
+    backdrop-filter var(--transition-emphasis),
+    padding var(--transition-emphasis);
 
   @media (hover: hover) {
     &:hover:not(.menu-is-open &) {
@@ -33,15 +33,42 @@
     flex-shrink: 0;
     display: block;
     z-index: 2;
-    transition: transform var(--transition-normal);
+    pointer-events: none;
+    transition: transform var(--transition-normal) ease-out;
 
     @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
       width: 3vw;
     }
+  }
 
-    // :hover {
-    //   transform: scale(1.03);
+  &__phone-number {
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    color: var(--txt-primary);
+    font-weight: var(--wght-bold);
+    font-size: var(--header-font-size);
+    letter-spacing: var(--l-spacing-wide);
+
+    // --- POSITIONING and ANIMATION ---
+
+    transform: translateX(15px) translateY(#{rem(2)});
+    transition:
+      opacity var(--transition-emphasis),
+      transform var(--transition-emphasis),
+      max-width var(--transition-emphasis),
+      margin var(--transition-emphasis);
+
+    // --- RESPONSIVENESS ---
+
+    // @include mq('lg') {
     // }
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
   }
 
   &__phone-link {
@@ -49,44 +76,22 @@
     align-items: center;
     text-decoration: none;
     padding: 0.5rem;
-    transition: transform var(--transition-normal);
+    position: relative;
     backface-visibility: hidden;
-    transform-style: preserve-3d;
+    transform: translateZ(0);
 
-    &:active {
-      transform: scale(0.97);
-    }
+    @media (hover: hover) {
+      &:hover {
+        .header__phone-number {
+          opacity: 1;
+          max-width: #{rem(180)};
+          transform: translateX(0) translateY(#{rem(2)});
+          margin-right: 0.8rem;
+        }
 
-    .header__phone-number {
-      display: none;
-      overflow: hidden;
-      color: var(--txt-primary);
-      font-weight: var(--wght-bold);
-      font-size: var(--header-font-size);
-      letter-spacing: var(--l-spacing-wide);
-      white-space: nowrap;
-      padding-top: #{rem(3)}; // optical correction | translateY doesn't works
-
-      @include mq('lg') {
-        display: block;
-        opacity: 0;
-        transform: translateX(#{rem(20)});
-        transition:
-          opacity var(--transition-normal),
-          transform var(--transition-normal);
-        margin-right: 0.8rem;
-        pointer-events: none;
-      }
-    }
-
-    &:hover {
-      .header__phone-number {
-        opacity: 1;
-        transform: translateX(0);
-      }
-
-      .header__phone-icon {
-        transform: scale(1.05);
+        .header__phone-icon {
+          transform: scale(1.03);
+        }
       }
     }
   }
@@ -94,9 +99,7 @@
   &.menu-is-open {
     box-shadow: none !important;
     backdrop-filter: none !important;
-    background-color: var(
-      --header-bg
-    ) !important; // in this case !important using cnowingly
+    background-color: var(--header-bg) !important;
 
     .header__phone-link {
       visibility: hidden;
@@ -115,7 +118,10 @@
     padding: #{rem(40)} 0 #{rem(40)};
   }
 
-  // --- MAIN CONTAINER ---
+  // -------------------------------------------------
+  //    MAIN CONTAINER
+  // -------------------------------------------------
+
   &__container {
     align-items: center;
   }
@@ -144,10 +150,4 @@
       grid-column: -2 / span 2;
     }
   }
-
-  // &.menu-is-open {
-  //   .header__phone-link {
-  //     visibility: hidden;
-  //   }
-  // }
 }

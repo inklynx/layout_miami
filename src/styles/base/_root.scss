@@ -55,7 +55,7 @@
   // -------------------------------------------------
 
   --bg-page: #{$clr-white};
-  --bg-section: #{$clr-gray-100};
+  --bg-section: #{$clr-white};
 
   // -------------------------------------------------
   //      TYPOGRAPHY
@@ -70,14 +70,15 @@
   // --- Font sizes ---
 
   --fs-base: 1rem;
-  --fs-s: #{fluid-calc(16px, 18px)};
-  --fs-md: #{fluid-calc(20px, 22px)};
-  --fs-lg: #{fluid-calc(32px, 36px)};
-  --fs-xl: #{fluid-calc(32px, 60px)};
+  --fs-s: clamp(16px, 3vw, 18px);
+  --fs-md: clamp(20px, 5vw, 24px);
+  --fs-lg: clamp(28px, 7vw, 44px);
+  --fs-xl: clamp(32px, 9vw, 60px);
 
   // --- Line heights ---
 
   --lh-base: 1.5;
+  --lh-section-title: 1.2;
   --lh-tight: 1;
 
   // --- Font weights ---
@@ -96,16 +97,15 @@
   //      GRID-CONTAINER
   // -------------------------------------------------
 
-  --container-width: #{rem(1680)};
+  --page-content-width: #{rem(1680)};
   --gutter: #{fluid-calc(12px, 24px)}; // TODO: use clamp
   --page-padding-mobile: #{rem(24)};
   --page-padding-tablet: #{rem(72)};
   --page-padding-desktop: #{rem(120)};
-  --page-section-padding-top: #{fluid-calc(64px, 100px)};
-  --page-section-padding-bottom: #{fluid-calc(16px, 32px)};
+  --page-title-padding: clamp(2rem, 6vh, 4rem);
   --dynamic-margin: max(
     var(--page-padding-desktop),
-    calc((100vw - var(--container-width)) / 2 + var(--page-padding-desktop))
+    calc((100vw - var(--page-content-width)) / 2 + var(--page-padding-desktop))
   ); // grid mirroring
 
   // -------------------------------------------------
@@ -202,4 +202,5 @@
   // -------------------------------------------------
 
   --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-emphasis: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
