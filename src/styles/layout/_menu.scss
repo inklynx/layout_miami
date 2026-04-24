@@ -39,11 +39,11 @@
 
   &__container {
     padding-top: clamp(3rem, 30vw, 7rem);
-    padding-left: var(--page-padding-mobile);
+    padding-left: var(--page-side-spacing-s);
 
     @include mq('md') {
       padding-top: 9rem;
-      padding-left: var(--page-padding-tablet);
+      padding-left: var(--page-side-spacing-md);
     }
 
     @include mq('lg') {

@@ -10,9 +10,9 @@
   padding: var(--header-padding);
   background: var(--header-bg);
   transition:
-    background-color var(--transition-emphasis),
-    backdrop-filter var(--transition-emphasis),
-    padding var(--transition-emphasis);
+    background-color var(--transition-smooth),
+    backdrop-filter var(--transition-smooth),
+    padding var(--transition-smooth);
 
   @media (hover: hover) {
     &:hover:not(.menu-is-open &) {
@@ -56,10 +56,10 @@
 
     transform: translateX(15px) translateY(#{rem(2)});
     transition:
-      opacity var(--transition-emphasis),
-      transform var(--transition-emphasis),
-      max-width var(--transition-emphasis),
-      margin var(--transition-emphasis);
+      opacity var(--transition-smooth),
+      transform var(--transition-smooth),
+      max-width var(--transition-smooth),
+      margin var(--transition-smooth);
 
     // --- RESPONSIVENESS ---
 

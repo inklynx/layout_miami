@@ -3,19 +3,19 @@
 .grid-container {
   width: 100%;
   max-width: var(--page-content-width);
-  padding: 0 var(--page-padding-mobile);
+  padding: 0 var(--page-side-spacing-s);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--gutter);
 
   @include mq('md') {
-    padding: 0 var(--page-padding-tablet);
+    padding: 0 var(--page-side-spacing-md);
     grid-template-columns: repeat(6, 1fr);
   }
 
   @include mq('lg') {
-    padding: 0 var(--page-padding-desktop);
+    padding: 0 var(--page-side-spacing-lg);
     grid-template-columns: repeat(12, 1fr);
   }
 }
@@ -25,7 +25,7 @@
 // -------------------------------------------------
 
 .section {
-  padding-top: #{fluid-calc(56px, 120px)};
+  padding-top: var(--section-spacing);
 
   &__title {
     grid-column: 1 / -1;

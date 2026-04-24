@@ -99,13 +99,14 @@
 
   --page-content-width: #{rem(1680)};
   --gutter: #{fluid-calc(12px, 24px)}; // TODO: use clamp
-  --page-padding-mobile: #{rem(24)};
-  --page-padding-tablet: #{rem(72)};
-  --page-padding-desktop: #{rem(120)};
+  --page-side-spacing-s: #{rem(24)};
+  --page-side-spacing-md: #{rem(72)};
+  --page-side-spacing-lg: #{rem(120)};
+  --section-spacing: #{fluid-calc(56px, 120px)};
   --page-title-padding: clamp(2rem, 6vh, 4rem);
   --dynamic-margin: max(
-    var(--page-padding-desktop),
-    calc((100vw - var(--page-content-width)) / 2 + var(--page-padding-desktop))
+    var(--page-side-spacing-lg),
+    calc((100vw - var(--page-content-width)) / 2 + var(--page-side-spacing-lg))
   ); // grid mirroring
 
   // -------------------------------------------------
@@ -202,5 +203,5 @@
   // -------------------------------------------------
 
   --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-emphasis: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+  --transition-smooth: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
 }
