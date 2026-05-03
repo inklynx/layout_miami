@@ -46,9 +46,9 @@
   // -------------------------------------------------
 
   --border-base: #{$clr-gray-300};
-  --focus-border-clr: #{$clr-gray-500};
-  --status-error: #{$clr-red-500};
-  --status-success: #{$clr-green-600};
+  --focus-border-clr: #{$clr-gray-800};
+  --status-error: #{$clr-red-500}; // TODO
+  --status-success: #{$clr-green-600}; // TODO
 
   // -------------------------------------------------
   //      BACKGROUND & SURFACE
@@ -70,14 +70,15 @@
   // --- Font sizes ---
 
   --fs-base: 1rem;
-  --fs-s: clamp(16px, 3vw, 18px);
+  --fs-xs: clamp(14px 1vw 15px);
+  --fs-s: clamp(16px, 4vw, 18px);
   --fs-md: clamp(20px, 5vw, 24px);
   --fs-lg: clamp(28px, 7vw, 44px);
   --fs-xl: clamp(32px, 9vw, 60px);
 
   // --- Line heights ---
 
-  --lh-base: 1.5;
+  --lh-base: 1.6;
   --lh-section-title: 1.2;
   --lh-tight: 1;
 
@@ -98,12 +99,12 @@
   // -------------------------------------------------
 
   --page-content-width: #{rem(1680)};
-  --gutter: #{fluid-calc(12px, 24px)}; // TODO: use clamp
+  --gutter: #{fluid-calc(12px, 24px)};
   --page-side-spacing-s: #{rem(24)};
   --page-side-spacing-md: #{rem(72)};
   --page-side-spacing-lg: #{rem(120)};
-  --section-spacing: #{fluid-calc(56px, 120px)};
-  --page-title-padding: clamp(2rem, 6vh, 4rem);
+  --section-spacing: #{fluid-calc(64px, 120px)};
+  --page-title-padding: clamp(1.5rem, 4vh, 4rem);
   --dynamic-margin: max(
     var(--page-side-spacing-lg),
     calc((100vw - var(--page-content-width)) / 2 + var(--page-side-spacing-lg))
@@ -133,15 +134,15 @@
   --burger-before-size: #{rem(44)};
   --burger-icon-size: #{fluid-calc(18px, 22px)};
   --burger-touch-target: #{rem(48)};
-  --burger-transition: var(--transition-normal);
+  --burger-transition: var(--transition-fast);
 
   // --- Menu ---
 
   --nav-bg: #{$clr-slate-100};
   --nav-link-color: var(--txt-primary);
   --nav-link-font-size: var(--fs-md);
-  --nav-link-hover: #{$clr-gray-950};
-  --nav-link-transition: var(--transition-normal);
+  --nav-link-hover: #{$clr-gray-600};
+  --nav-link-transition: var(--duration-fast) var(--easing-ease-in);
   --nav-link-weight: var(--wght-bold);
   --nav-list-gap: #{rem(24)};
   --nav-list-padding: #{fluid-calc(40px, 54px)};
@@ -169,7 +170,7 @@
   // -------------------------------------------------
 
   --hero-container-padding: 2.5rem;
-  --hero-content-gap: #{fluid-calc(16px, 20px)};
+  --hero-content-gap: #{fluid-calc(16px, 40px)};
   --hero-font-size: #{fluid-calc(34px, 60px)};
   --hero-icon-shift: 0.3rem;
   --hero-icon-width: #{fluid-calc(54px, 96px)};
@@ -184,24 +185,77 @@
   //    PRODUCTS
   // -------------------------------------------------
 
+  --card-category-clr: #{$clr-gray-500};
   --card-img-width: #{fluid-calc(200px, 250px)};
   --card-shadow-width: #{rem(100)};
 
   // -------------------------------------------------
-  //    FORMS
+  //    GALLERY
   // -------------------------------------------------
 
-  --form-input-error: var(--status-error);
+  --gallery-border: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+  --gallery-transition: var(--duration-smooth) var(--easing-smooth);
+  --gallery-hover: inset 0 0 0 1px rgba(0, 0, 0, 0.12),
+    0 12px 24px rgba(0, 0, 0, 0.12);
+
+  // -------------------------------------------------
+  //    BUTTON
+  // -------------------------------------------------
+
+  --btn-bg: #{$clr-gray-800};
+  --btn-active: #{$clr-gray-950};
+  --btn-disabled: #{$clr-gray-450};
+  --btn-disabled-txt: #d0d0d0;
+  --btn-radius: #{rem(40)};
+  --btn-hover-bg: #{$clr-white};
+  --btn-hover-txt: #{$clr-gray-800};
+
+  // -------------------------------------------------
+  //    CONTACT
+  // -------------------------------------------------
+
+  --contact-info-gap: #{fluid-calc(1.4rem, 2rem)};
+  --contact-info-label: var(--fs-xs);
+  --form-input-bg: #{$clr-gray-200};
+  --form-input-border: inset 1 1 0 0px rgba(0, 0, 0, 0.08);
+  --form-input-error: var(--status-error); // TODO/optional
   --form-input-focus: #{$clr-gray-950}; // form border focus
+  --form-input-hover: #{$clr-gray-250};
   --form-input-placeholder: var(--txt-muted);
-  --form-input-success: var(--status-success);
+  --form-input-success: var(--status-success); // TODO/optional
   --form-input-txt: var(--txt-primary);
   --form-label: var(--txt-primary);
+  --form-padding-y: calc(var(--form-radius) / 2);
+  --form-radius: #{fluid-calc(28px, 32px)};
+  --padding-block: var(--form-radius);
+  --padding-inline: var(--form-radius);
 
   // -------------------------------------------------
-  //    TRANSITIONS
+  //    TRANSITION TOKENS
   // -------------------------------------------------
 
-  --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s;
+  --transition-fast: var(--duration-fast) var(--easing-linear);
+  --transition-normal: var(--duration-normal) var(--easing-ease-in);
+  --transition-subtle: var(--duration-slow) var(--easing-subtle); // product card img
+  --transition-smooth: var(--duration-smooth) var(--easing-smooth)
+    var(--delay-normal);
+
+  // --- DURATIONS ---
+
+  --duration-fast: 0.25s; // micro-interactions, borders, buttons
+  --duration-normal: 0.35s; // cards, medium elements, menu sidebar
+  --duration-slow: 0.7s; // emphasis (products section)
+  --duration-smooth: 0.5s; // galleries, pictures
+
+  // --- EASINGS ---
+
+  --easing-ease-in: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-linear: ease;
+  --easing-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-subtle: cubic-bezier(0.15, 0, 0.3, 1);
+
+  // --- DELAYS ---
+
+  --delay-long: 0.2s;
+  --delay-normal: 0.1s;
 }

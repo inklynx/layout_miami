@@ -9,6 +9,8 @@
 //      2.5. Scroll Lock
 //      2.6. Soundwave icon animation
 // 3. Handlers
+//      3.1. Handle burger click
+//      3.2. Submit handling (mock/dummy)
 // 4. Init
 
 // =================================================
@@ -20,6 +22,7 @@ const header = document.querySelector('.header');
 const menu = document.querySelector('.menu');
 const menuLinks = document.querySelectorAll('.menu__link');
 const menuOverlay = document.querySelector('.menu-overlay');
+const contactForm = document.querySelector('.contact__form');
 
 // =================================================
 //      HELPER FUNCTIONS
@@ -224,78 +227,6 @@ const animateSoundwave = () => {
   });
 };
 
-
-
-// -------------------------------------------------
-//      FY-algorithm animation: pure JS (backup)
-// -------------------------------------------------
-
-// let soundwaveIntervals = [];
-
-// const animateSoundwave = () => {
-//   const bars = document.querySelectorAll('.wave-bar');
-//   const barsArray = Array.from(bars);
-
-//   if (!barsArray.length) return;
-
-//   // --- cleanup ---
-
-//   soundwaveIntervals.forEach(clearInterval);
-//   soundwaveIntervals = [];
-
-//   // --- Fisher-Yates shuffle ---
-
-//   const shuffledBars = fisherYatesShuffle(barsArray);
-//   const selectedBars = [];
-//   const minDistance = 2;
-//   const maxBars = 4;
-
-//   // select bars with minDistance constraint
-
-//   for (const bar of shuffledBars) {
-//     if (selectedBars.length >= maxBars) break;
-
-//     const candidateIndex = barsArray.indexOf(bar);
-
-//     const isTooClose = selectedBars.some(selectedBar => {
-//       const alreadySelectedIndex = barsArray.indexOf(selectedBar);
-//       return Math.abs(candidateIndex - alreadySelectedIndex) < minDistance;
-//     });
-
-//     if (!isTooClose) {
-//       selectedBars.push(bar);
-//     }
-//   }
-
-//   // --- fallback ---
-
-//   if (selectedBars.length === 0) {
-//     console.warn('Soundwave: No bars selected with minDistance. Using first 4.');
-//     for (let i = 0; i < Math.min(maxBars, barsArray.length); i++) {
-//       selectedBars.push(barsArray[i]);
-//     }
-//   }
-
-//   // --- animation ---
-
-//   selectedBars.forEach((bar) => {
-//     bar.style.transition = 'opacity 0.35s ease';
-
-//     const flickerInterval = setInterval(() => {
-//       bar.style.opacity = (Math.random() * 0.8 + 0.2);
-//       bar.style.transitionDelay = Math.random() * 180 + 'ms';
-//     }, 220);
-
-//     soundwaveIntervals.push(flickerInterval);
-
-//     setTimeout(() => {
-//       clearInterval(flickerInterval);
-//       bar.style.opacity = '1';
-//       bar.style.transitionDelay = '0ms';
-//     }, 2000);
-//   });
-// };
-
 // =================================================
 //     HANDLERS
 // =================================================
@@ -304,6 +235,29 @@ const handleBurgerClick = () => toggleMenu();
 
 const handleLinkClick = (e) => {
   toggleMenu(true);
+};
+
+// -------------------------------------------------
+//      SUBMIT HANDLING (mock/dummy)
+// -------------------------------------------------
+
+const handleFormSubmit = (e) => {
+  e.preventDefault();
+
+  const submitBtn = contactForm.querySelector('.contact__submit');
+
+  submitBtn.textContent = 'Sending...';
+  submitBtn.disabled = true;
+
+  setTimeout(() => {
+    submitBtn.textContent = 'Sent!';
+    contactForm.reset();
+
+    setTimeout(() => {
+      submitBtn.textContent = 'Send';
+      submitBtn.disabled = false;
+    }, 2000);
+  }, 1500);
 };
 
 // =================================================
@@ -321,6 +275,10 @@ const init = () => {
 
   if (menuLinks) {
     menuLinks.forEach(link => link.addEventListener('click', handleLinkClick));
+  }
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', handleFormSubmit);
   }
 
   initProximitySignal();

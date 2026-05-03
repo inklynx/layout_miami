@@ -51,7 +51,7 @@
       scale: 1;
     }
 
-    @media (min-width: 820px) and (max-width: 1024px) and (orientation: portrait) {
+    @media (min-width: 820px) and (max-width: 1023px) and (orientation: portrait) {
       scale: 1.2;
     }
   }
@@ -73,12 +73,10 @@
 
     @include mq('md') {
       grid-column: 1 / span 5;
-      gap: calc(var(--hero-content-gap) + #{rem(24)});
     }
 
     @include mq('lg') {
       grid-column: 1 / span 9;
-      gap: calc(var(--hero-content-gap) + #{rem(36)});
     }
   }
 

@@ -31,8 +31,17 @@
     <link
       rel="preload"
       as="image"
+      href="/src/images/photos/hero-girl-md.webp"
+      media="(min-width: 768px) and (max-width: 1023px)"
+      imagesizes="100vw"
+      fetchpriority="high"
+    >
+
+    <link
+      rel="preload"
+      as="image"
       href="/src/images/photos/hero-girl-mobile.webp"
-      media="(max-width: 1023px)"
+      media="(max-width: 767px)"
       imagesizes="100vw"
       fetchpriority="high"
     />
@@ -171,25 +180,35 @@
     <div class="menu-overlay"></div>
 
     <main>
-      <h1 class="visually-hidden">
+      <h1
+        class="visually-hidden">
         Bose Quiet Comfort Wireless Headphones - Premium Noise Cancelling Audio
         Experience
       </h1>
-      <section class="hero">
+      <section
+        class="hero">
         <picture>
           <source
             media="(min-width: 1024px)"
             srcset="/src/images/photos/hero-girl-lg.webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="/src/images/photos/hero-girl-md.webp"
           />
           <img
             src="/src/images/photos/hero-girl-mobile.webp"
             alt="woman wearing Bose headphones"
             class="hero__bg"
             loading="eager"
+            width="1920"
+            height="1080"
           />
         </picture>
-        <div class="grid-container hero__container">
-          <div class="hero__content">
+        <div
+          class="grid-container hero__container">
+          <div
+            class="hero__content">
             <svg
               class="hero__soundwave"
               viewBox="0 0 48 58"
@@ -298,7 +317,8 @@
               />
             </svg>
 
-            <h2 class="hero__display-text">
+            <h2
+              class="hero__display-text">
               The world shades.
               <br />
               Your music shines.
@@ -311,11 +331,18 @@
         class="products section"
         id="recommended"
       >
-        <div class="grid-container">
-          <h2 class="section__title">Recommended</h2>
-          <div class="products__grid">
-            <article class="product-card">
-              <div class="product-card__image-wrapper">
+        <div
+          class="grid-container">
+          <h2
+            class="section__title">
+            Recommended
+          </h2>
+          <div
+            class="products__grid">
+            <article
+              class="product-card">
+              <div
+                class="product-card__image-wrapper">
                 <img
                   src="/src/images/photos/products-portable-smart-speaker.webp"
                   alt="Bose Portable Smart Speaker"
@@ -326,15 +353,27 @@
                   height="324"
                 />
               </div>
-              <div class="product-card__info">
-                <h3 class="product-card__name">Portable Smart Speaker</h3>
-                <p class="product-card__category">Smart home</p>
-                <p class="product-card__price">$ 399.00</p>
+              <div
+                class="product-card__info">
+                <h3
+                  class="product-card__name">
+                  Portable Smart Speaker
+                </h3>
+                <p
+                  class="product-card__category">
+                  Smart home
+                </p>
+                <p
+                  class="product-card__price">
+                  $ 399.00
+                </p>
               </div>
             </article>
 
-            <article class="product-card">
-              <div class="product-card__image-wrapper">
+            <article
+              class="product-card">
+              <div
+                class="product-card__image-wrapper">
                 <img
                   src="/src/images/photos/products-soundlink-bt-speaker.webp"
                   alt="Bose Portable Smart Speaker"
@@ -345,18 +384,29 @@
                   height="324"
                 />
               </div>
-              <div class="product-card__info">
-                <h3 class="product-card__name">
+              <div
+                class="product-card__info">
+                <h3
+                  class="product-card__name">
                   SoundLink Flex Bluetooth speaker
                 </h3>
-                <p class="product-card__category">Portable bluetooth</p>
-                <p class="product-card__price">$ 149.00</p>
+                <p
+                  class="product-card__category">
+                  Portable bluetooth
+                </p>
+                <p
+                  class="product-card__price">
+                  $ 149.00
+                </p>
               </div>
             </article>
 
-            <article class="product-card">
-              <div class="product-card__img-shadow">
-                <div class="product-card__image-wrapper">
+            <article
+              class="product-card">
+              <div
+                class="product-card__img-shadow">
+                <div
+                  class="product-card__image-wrapper">
                   <img
                     src="/src/images/photos/products-color-bt-speaker.webp"
                     alt="Bose Portable Smart Speaker"
@@ -368,12 +418,20 @@
                   />
                 </div>
               </div>
-              <div class="product-card__info">
-                <h3 class="product-card__name">
+              <div
+                class="product-card__info">
+                <h3
+                  class="product-card__name">
                   SoundLink Color Bluetooth speaker II
                 </h3>
-                <p class="product-card__category">Portable bluetooth</p>
-                <p class="product-card__price">$ 129.00</p>
+                <p
+                  class="product-card__category">
+                  Portable bluetooth
+                </p>
+                <p
+                  class="product-card__price">
+                  $ 129.00
+                </p>
               </div>
             </article>
           </div>
@@ -384,15 +442,19 @@
         class="categories section grid-container"
         id="categories"
       >
-        <h2 class="section__title">
+        <h2
+          class="section__title">
           Browse Bose products
           <br />
           by category
         </h2>
 
-        <article class="categories__row categories__row--type-a">
-          <div class="categories__images">
-            <div class="categories__image-wrapper">
+        <article
+          class="categories__row categories__row--type-a">
+          <div
+            class="categories__images">
+            <div
+              class="categories__image-wrapper">
               <img
                 src="/src/images/photos/gallery-girl-1.webp"
                 srcset="
@@ -409,7 +471,8 @@
                 height="497"
               />
             </div>
-            <div class="categories__image-wrapper">
+            <div
+              class="categories__image-wrapper">
               <img
                 src="/src/images/photos/gallery-girl-2.webp"
                 srcset="
@@ -426,12 +489,16 @@
               />
             </div>
           </div>
-          <p class="categories__caption">Headphones & earbuds</p>
+          <h3
+            class="categories__caption">Headphones & earbuds</h3>
         </article>
 
-        <article class="categories__row categories__row--type-c">
-          <div class="categories__images">
-            <div class="categories__image-wrapper">
+        <article
+          class="categories__row categories__row--type-c">
+          <div
+            class="categories__images">
+            <div
+              class="categories__image-wrapper">
               <img
                 src="/src/images/photos/gallery-girl-3.webp"
                 srcset="
@@ -447,7 +514,8 @@
                 height="1080"
               />
             </div>
-            <div class="categories__image-wrapper">
+            <div
+              class="categories__image-wrapper">
               <img
                 src="/src/images/photos/gallery-speaker-4.webp"
                 srcset="
@@ -464,12 +532,18 @@
               />
             </div>
           </div>
-          <p class="categories__caption">Speakers</p>
+          <h3
+            class="categories__caption">
+            Speakers
+          </h3>
         </article>
 
-        <article class="categories__row categories__row--type-b">
-          <div class="categories__images">
-            <div class="categories__image-wrapper">
+        <article
+          class="categories__row categories__row--type-b">
+          <div
+            class="categories__images">
+            <div
+              class="categories__image-wrapper">
               <img
                 src="/src/images/photos/gallery-sunglasses-5.webp"
                 srcset="/src/images/photos/gallery-sunglasses-5.webp 460w"
@@ -482,7 +556,8 @@
                 height="299"
               />
             </div>
-            <div class="categories__image-wrapper">
+            <div
+              class="categories__image-wrapper">
               <img
                 src="/src/images/photos/gallery-sunglasses-6.webp"
                 srcset="
@@ -500,16 +575,169 @@
               />
             </div>
           </div>
-          <p class="categories__caption">Audio sunglasses</p>
+          <h3
+            class="categories__caption">
+            Audio sunglasses
+          </h3>
         </article>
 
         <a
           href="#"
-          class="categories__btn"
+          class="btn-primary categories__btn"
         >
-        View all
+          View all
         </a>
       </section>
+
+      <section
+        class="why-bose section grid-container"
+        id="how-to-buy"
+      >
+        <h2
+          class="why-bose__title">
+          Why buy direct from Bose
+        </h2>
+
+        <div
+          class="why-bose__content">
+          <ul
+            class="why-bose__list">
+            <li>Free 2-day shipping and returns</li>
+            <li>90-day risk-free trial</li>
+            <li>World class customer service</li>
+            <li>My Bose account management</li>
+          </ul>
+          <p
+            class="why-bose__description">
+            A great product is more than what's in the box. It's a promise of premium performance, world-class support, and everything you expect from a trusted brand. It's just one of many reasons why you'll shop with confidence on Bose.com.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="contact section grid-container"
+        id="contacts">
+        <h2
+          class="section__title">
+          Contact us
+        </h2>
+        <div class="contact__wrapper">
+          <form
+            action="#"
+            class="contact__form"
+            method="post">
+            <div class="contact__field">
+              <label
+                for="name"
+                class="visually-hidden">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+                autocomplete="name"
+                class="contact__input"
+              >
+            </div>
+            <div class="contact__field">
+              <label
+                for="email"
+                class="visually-hidden">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+                autocomplete="email"
+                class="contact__input"
+              >
+            </div>
+            <div class="contact__field">
+              <label
+                for="message"
+                class="visually-hidden">
+                Message
+              </label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Message"
+                required
+                rows="5"
+                class="contact__input contact__input--textarea"
+              ></textarea>
+            </div>
+            <button
+              class="btn-primary contact__submit">
+              Send
+            </button>
+          </form>
+          <div
+            class="contact__info">
+            <div
+              class="contact__info-item">
+              <p
+                class="contact__info-label">
+                Phone
+              </p>
+              <a
+                href="tel:+12345555555"
+                class="contact__info-value">
+                +1 234 555-55-55
+              </a>
+            </div>
+            <div
+              class="contact__info-item">
+              <p
+                class="contact__info-label">
+                Email
+              </p>
+              <a
+                href="mailto:hello@miami.com"
+                class="contact__info-value">
+                hello@miami.com
+              </a>
+            </div>
+            <div class="contact__info-item">
+              <p class="contact__info-label">
+                Adress
+              </p>
+              <adress class="contact__info-value">
+                400 first ave.<br>
+                suite 700<br>
+                Minneapolis, MN 55401
+              </adress>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer
+        class="footer section">
+        <div
+          class="footer__image-wrapper">
+          <img
+            src="/src/images/photos/footer-girl-lg.webp"
+            srcset="
+              /src/images/photos/footer-girl-mobile.webp 828w,
+              /src/images/photos/footer-girl-lg-1920.webp 1920w
+              "
+            sizes="100vw"
+            alt="Bose earbuds lifestyle shot"
+            class="footer__image"
+            loading="lazy"
+            decoding="async"
+            width="1920"
+            height="1080"
+          >
+        </div>
+      </footer>
 
     </main>
   </body>

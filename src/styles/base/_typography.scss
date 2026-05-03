@@ -11,3 +11,14 @@ h3 {
 
   font-size: var(--fs-md);
 }
+
+p {
+  @extend %paragraph-base;
+}
+
+li {
+  @extend %paragraph-base;
+
+  font-size: var(--fs-s);
+  font-weight: var(--wght-medium);
+}
