@@ -34,19 +34,29 @@
     display: block;
     z-index: 2;
     pointer-events: none;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    transform: translateZ(0);
+    transform-origin: center;
     transition: transform var(--transition-normal) ease-out;
 
-    @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-      width: 3vw;
-    }
+    // @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    //   width: 3vw;
+    // }
+  }
+
+  &__phone-mask {
+    overflow: hidden;
+    display: block;
+    pointer-events: none;
   }
 
   &__phone-number {
+    display: block;
     opacity: 0;
-    max-width: 0;
+    width: var(--header-phone-width);
     overflow: hidden;
     white-space: nowrap;
-    display: block;
     color: var(--txt-primary);
     font-weight: var(--wght-bold);
     font-size: var(--header-font-size);
@@ -54,12 +64,10 @@
 
     // --- POSITIONING and ANIMATION ---
 
-    transform: translateX(15px) translateY(#{rem(2)});
+    transform: translateX(100%);
     transition:
       opacity var(--transition-smooth),
-      transform var(--transition-smooth),
-      max-width var(--transition-smooth),
-      margin var(--transition-smooth);
+      transform var(--transition-smooth);
 
     // --- RESPONSIVENESS ---
 
@@ -74,22 +82,17 @@
     text-decoration: none;
     padding: 0.5rem;
     position: relative;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
-    transform: translateZ(0);
 
     @media (hover: hover) {
       &:hover {
         .header__phone-number {
           opacity: 1;
-          max-width: #{rem(180)};
-          transform: translateX(0) translateY(#{rem(2)});
-          margin-right: 0.8rem;
+          transform: translateX(0);
         }
 
-        .header__phone-icon {
-          transform: scale(1.03);
-        }
+        // .header__phone-icon {
+        //   transform: scale(1.03);
+        // }
       }
     }
   }
