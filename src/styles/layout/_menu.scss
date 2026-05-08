@@ -11,6 +11,8 @@
   flex-direction: column;
   transform: translateX(-100%);
   visibility: hidden;
+  will-change: transform; // Firefox animation hint
+  backface-visibility: hidden; // Firefox animation hint
   transition:
     transform var(--nav-transition),
     visibility var(--nav-transition);

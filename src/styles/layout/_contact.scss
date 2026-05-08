@@ -12,10 +12,14 @@
       gap: calc(3 * var(--gutter));
     }
 
-    @include mq('lg') {
-      grid-column: 2 / -1;
+    @include mq('xl') {
+      grid-column: 1 / -1;
       grid-template-columns: 1fr 1fr;
       gap: calc(6 * var(--gutter));
+    }
+
+    @include mq('xxl') {
+      grid-column: 2 / -1;
     }
 
     @media (min-width: 1024px) and (orientation: portrait) {
@@ -83,6 +87,10 @@
 
   &__info-item {
     padding-left: var(--padding-inline);
+
+    @include mq('md') {
+      padding-left: 0;
+    }
   }
 
   &__info-label {

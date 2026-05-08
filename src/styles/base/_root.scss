@@ -71,14 +71,14 @@
 
   --fs-base: 1rem;
   --fs-xs: clamp(14px 1vw 15px);
-  --fs-s: clamp(16px, 4vw, 18px);
-  --fs-md: clamp(20px, 5vw, 24px);
-  --fs-lg: clamp(28px, 7vw, 44px);
-  --fs-xl: clamp(32px, 9vw, 60px);
+  --fs-s: clamp(16px, 1.5vw, 20px);
+  --fs-md: clamp(20px, 2vw, 22px);
+  --fs-lg: #{fluid-calc(22px, 30px)};
+  --fs-xl: clamp(28px, 5vw, 40px);
 
   // --- Line heights ---
 
-  --lh-base: 1.6;
+  --lh-base: 1.7;
   --lh-section-title: 1.2;
   --lh-tight: 1;
 
@@ -92,6 +92,7 @@
   // --- Letter spacing ---
 
   --l-spacing-tight: -0.02em;
+  --l-spacing-medium: 0.04em;
   --l-spacing-wide: 0.09em;
 
   // -------------------------------------------------
@@ -123,6 +124,7 @@
   --header-padding-md: #{rem(20)} 0 #{rem(20)};
   --header-padding: #{rem(12)} 0 #{rem(12)};
   --header-phone-icon-width: #{fluid-calc(20px, 24px)};
+  --header-phone-width: #{fluid-calc(140px, 200px)};
   --header-shadow-hover: 0 4px 30px rgba(0, 0, 0, 0.05);
 
   // -------------------------------------------------
@@ -216,6 +218,7 @@
 
   --contact-info-gap: #{fluid-calc(1.4rem, 2rem)};
   --contact-info-label: var(--fs-xs);
+  --form-btn-width: #{rem(600)};
   --form-input-bg: #{$clr-gray-200};
   --form-input-border: inset 1 1 0 0px rgba(0, 0, 0, 0.08);
   --form-input-error: var(--status-error); // TODO/optional

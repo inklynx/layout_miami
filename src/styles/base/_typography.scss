@@ -3,13 +3,13 @@
 h2 {
   @extend %heading-base;
 
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
 }
 
 h3 {
   @extend %heading-base;
 
-  font-size: var(--fs-md);
+  font-size: var(--fs-lg);
 }
 
 p {

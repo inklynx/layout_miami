@@ -18,6 +18,15 @@ body {
   line-height: var(--lh-base);
   min-height: 100dvh;
   overflow-x: hidden;
+  font-family: #{$font-primary};
+}
+
+button,
+input,
+textarea,
+select,
+a {
+  font-family: inherit;
 }
 
 ul,

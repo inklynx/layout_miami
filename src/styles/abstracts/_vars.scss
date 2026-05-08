@@ -15,11 +15,11 @@
 
 // --- 1.1 Base settings
 
-$font-path: '../fonts';
 $font-format: format('woff2');
-$font-family-name: 'Roboto';
-$font-primary: $font-family-name, Arial, Helvetica, sans-serif;
-$font-secondary: $font-family-name, Arial, Helvetica, sans-serif;
+$font-name: 'Roboto';
+$font-path: '../fonts';
+$font-primary: $font-name, Arial, Helvetica, sans-serif;
+$font-secondary: $font-name, Arial, Helvetica, sans-serif;
 
 // --- Font weights ---
 

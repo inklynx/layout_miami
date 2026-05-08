@@ -6,11 +6,14 @@
     margin-bottom: 2rem;
 
     @include mq('md') {
-      grid-column: 1 / -1;
       margin-bottom: 4rem;
     }
 
-    @include mq('lg') {
+    // @include mq('lg') {
+    //   grid-column: 1 / -1;
+    // }
+
+    @include mq('xxl') {
       grid-column: 2 / -2;
     }
 
@@ -54,10 +57,10 @@
     }
 
     @include mq('md') {
-      height: #{rem(250)};
+      height: clamp(200px, 28vw, 250px);
     }
 
-    @include mq('lg') {
+    @include mq('xl') {
       height: #{rem(350)};
     }
   }
@@ -103,17 +106,8 @@
   }
 
   &__caption {
-    margin-top: 0.5rem;
+    margin-top: clamp(0.5rem, 4vw, 1.3rem);
     font-weight: var(--wght-medium);
-
-    @media (min-width: 820px) and (max-width: 1023px) {
-      margin-top: 2rem;
-      font-size: calc(var(--fs-md) + 1vw);
-    }
-
-    @include mq('lg') {
-      margin-top: 2rem;
-    }
   }
 
   &__btn {
