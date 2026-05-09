@@ -26,9 +26,9 @@
     max-width: #{rem(800)};
   }
 
-  @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-    max-width: #{rem(600)};
-  }
+  // @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+  //   max-width: #{rem(600)};
+  // }
 
   &.is-open {
     transform: translateX(0);
@@ -259,6 +259,7 @@
   }
 }
 
+html.scroll-locked,
 body.scroll-locked {
   overflow: hidden;
 }

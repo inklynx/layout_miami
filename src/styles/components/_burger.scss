@@ -43,11 +43,6 @@
     }
   }
 
-  // &:hover::before {
-  //   transform: translate(-50%, -50%) scale(1);
-  //   opacity: 1;
-  // }
-
   // -------------------------------------------------
   //      RIPPLE PROXIMITY EFFECT for close-x (a11y)
   // -------------------------------------------------
@@ -84,11 +79,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    @media (min-width: 840px) and (max-width: 1024px) and (orientation: portrait) {
-      width: #{rem(26)};
-      height: #{rem(26)};
-    }
   }
 
   &__icon {

@@ -171,6 +171,58 @@ const toggleScrollLock = (isLocked) => {
 };
 
 // -------------------------------------------------
+// --- tring to compensate scrollbar ---
+// -------------------------------------------------
+
+// const toggleScrollLock = (isLocked) => {
+//   const body = document.body;
+//   const html = document.documentElement;
+
+//   if (isLocked) {
+//     const scrollBarWidth = window.innerWidth - html.clientWidth;
+
+//     // --- CRITICAL: Disable header transitions FIRST ---
+//     if (header) {
+//       header.style.transition = 'none'; // turn off all transitions
+//     }
+
+//     // --- Lock scroll ---
+//     html.style.overflow = 'hidden';
+//     body.style.overflow = 'hidden';
+//     body.style.paddingRight = `${scrollBarWidth}px`;
+
+//     // --- Compensate header ---
+//     if (header) {
+//       header.style.paddingRight = `${scrollBarWidth}px`;
+//     }
+
+//     // --- Force synchronous reflow ---
+//     if (header) {
+//       void header.offsetHeight; // Forces browser to apply styles NOW
+//     }
+
+//     // --- Restore header transitions ---
+//     if (header) {
+//       header.style.transition = ''; // Re-enable (inherits from CSS)
+//     }
+
+//     body.classList.add('scroll-locked');
+//   } else {
+
+//     // --- Unlock (no transition disable needed on close) ---
+//     html.style.overflow = '';
+//     body.style.overflow = '';
+//     body.style.paddingRight = '';
+
+//     if (header) {
+//       header.style.paddingRight = '';
+//     }
+
+//     body.classList.remove('scroll-locked');
+//   }
+// };
+
+// -------------------------------------------------
 //      FISHER-YATES helper
 // -------------------------------------------------
 

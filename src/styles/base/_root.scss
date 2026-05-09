@@ -28,11 +28,11 @@
       var(--header-padding) + var(--burger-icon-size)
     ); // section header visible under the fixed header
 
-    @include mq('md') {
-      scroll-margin-top: calc(
-        var(--header-padding-md) + var(--burger-icon-size)
-      );
-    }
+    // @include mq('md') {
+    //   scroll-margin-top: calc(
+    //     var(--header-padding-md) + var(--burger-icon-size)
+    //   );
+    // }
 
     @include mq('lg') {
       scroll-margin-top: calc(
@@ -45,7 +45,6 @@
   //      STATUS & BORDERS
   // -------------------------------------------------
 
-  --border-base: #{$clr-gray-300};
   --focus-border-clr: #{$clr-gray-800};
   --status-error: #{$clr-red-500}; // TODO
   --status-success: #{$clr-green-600}; // TODO
@@ -70,8 +69,8 @@
   // --- Font sizes ---
 
   --fs-base: 1rem;
-  --fs-xs: clamp(14px 1vw 15px);
-  --fs-s: clamp(16px, 1.5vw, 20px);
+  --fs-xs: clamp(14px 0.9em 15px);
+  --fs-s: clamp(16px, 1.1em, 18px);
   --fs-md: clamp(20px, 2vw, 22px);
   --fs-lg: #{fluid-calc(22px, 30px)};
   --fs-xl: clamp(28px, 5vw, 40px);
@@ -118,13 +117,12 @@
   --header-actions-gap: #{fluid-calc(4px, 20px)};
   --header-bg-hover: #{$clr-white};
   --header-bg: transparent;
-  --header-font-size: calc(var(--fs-s));
-  --header-logo-height: calc(#{rem(4)} + 3vw);
+  --header-font-size: var(--fs-s);
+  --header-logo-height: #{fluid-calc(120px, 150px)};
   --header-padding-lg: #{rem(10)} 0 #{rem(10)};
-  --header-padding-md: #{rem(20)} 0 #{rem(20)};
   --header-padding: #{rem(12)} 0 #{rem(12)};
   --header-phone-icon-width: #{fluid-calc(20px, 24px)};
-  --header-phone-width: #{fluid-calc(140px, 200px)};
+  --header-phone-width: #{fluid-calc(170px, 180px)};
   --header-shadow-hover: 0 4px 30px rgba(0, 0, 0, 0.05);
 
   // -------------------------------------------------

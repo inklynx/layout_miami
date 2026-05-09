@@ -39,10 +39,6 @@
     transform: translateZ(0);
     transform-origin: center;
     transition: transform var(--transition-normal) ease-out;
-
-    // @media (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
-    //   width: 3vw;
-    // }
   }
 
   &__phone-mask {
@@ -89,10 +85,6 @@
           opacity: 1;
           transform: translateX(0);
         }
-
-        // .header__phone-icon {
-        //   transform: scale(1.03);
-        // }
       }
     }
   }
@@ -107,16 +99,8 @@
     }
   }
 
-  @include mq('md') {
-    padding: var(--header-padding-md);
-  }
-
   @include mq('lg') {
     padding: var(--header-padding-lg);
-  }
-
-  @media (min-width: 840px) and (max-width: 1024px) and (orientation: portrait) {
-    padding: #{rem(40)} 0 #{rem(40)};
   }
 
   // -------------------------------------------------
@@ -128,7 +112,7 @@
   }
 
   &__logo {
-    height: var(--header-logo-height);
+    width: var(--header-logo-height);
     max-width: #{rem(170)};
     margin-left: #{rem(-4)};
     position: relative;
