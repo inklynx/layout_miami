@@ -157,70 +157,88 @@ const initProximitySignal = () => {
 //      SCROLL LOCK
 // -------------------------------------------------
 
-const toggleScrollLock = (isLocked) => {
-  const body = document.body;
-
-  if (isLocked) {
-    const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
-    body.style.paddingRight = `${scrollBarWidth}px`;
-    body.classList.add('scroll-locked');
-  } else {
-    body.style.paddingRight = '';
-    body.classList.remove('scroll-locked');
-  }
-};
-
-// -------------------------------------------------
-// --- tring to compensate scrollbar ---
-// -------------------------------------------------
-
 // const toggleScrollLock = (isLocked) => {
 //   const body = document.body;
-//   const html = document.documentElement;
 
 //   if (isLocked) {
-//     const scrollBarWidth = window.innerWidth - html.clientWidth;
-
-//     // --- CRITICAL: Disable header transitions FIRST ---
-//     if (header) {
-//       header.style.transition = 'none'; // turn off all transitions
-//     }
-
-//     // --- Lock scroll ---
-//     html.style.overflow = 'hidden';
-//     body.style.overflow = 'hidden';
+//     const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
 //     body.style.paddingRight = `${scrollBarWidth}px`;
-
-//     // --- Compensate header ---
-//     if (header) {
-//       header.style.paddingRight = `${scrollBarWidth}px`;
-//     }
-
-//     // --- Force synchronous reflow ---
-//     if (header) {
-//       void header.offsetHeight; // Forces browser to apply styles NOW
-//     }
-
-//     // --- Restore header transitions ---
-//     if (header) {
-//       header.style.transition = ''; // Re-enable (inherits from CSS)
-//     }
-
 //     body.classList.add('scroll-locked');
 //   } else {
-
-//     // --- Unlock (no transition disable needed on close) ---
-//     html.style.overflow = '';
-//     body.style.overflow = '';
 //     body.style.paddingRight = '';
-
-//     if (header) {
-//       header.style.paddingRight = '';
-//     }
-
 //     body.classList.remove('scroll-locked');
 //   }
 // };
+
+// -------------------------------------------------
+//     trying to compensate scrollbar
+// -------------------------------------------------
+
+const toggleScrollLock = (isLocked) => {
+  const body = document.body;
+  const html = document.documentElement;
+
+  if (isLocked) {
+    const scrollBarWidth = window.innerWidth - html.clientWidth;
+
+    // --- disable header transitions ---
+    if (header) {
+      header.style.transition = 'none';
+    }
+
+    // --- lock scroll ---
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+
+    // --- only compensate if scrollbar exists ---
+    if (scrollBarWidth > 0) {
+      body.style.paddingRight = `${scrollBarWidth}px`;
+
+      if (header) {
+        header.style.paddingRight = `${scrollBarWidth}px`;
+      }
+    }
+
+    // --- force reflow ---
+    if (header) {
+      void header.offsetHeight;
+    }
+
+    // --- restore header transitions ---
+    if (header) {
+      header.style.transition = '';
+    }
+
+    body.classList.add('scroll-locked');
+  } else {
+
+    // --- disable header transitions on unlock ---
+    if (header) {
+      header.style.transition = 'none';
+    }
+
+    // --- unlock scroll ---
+    html.style.overflow = '';
+    body.style.overflow = '';
+    body.style.paddingRight = '';
+
+    if (header) {
+      header.style.paddingRight = '';
+    }
+
+    // --- force reflow on unlock ---
+    if (header) {
+      void header.offsetHeight;
+    }
+
+    // --- restore header transitions ---
+    if (header) {
+      header.style.transition = '';
+    }
+
+    body.classList.remove('scroll-locked');
+  }
+};
 
 // -------------------------------------------------
 //      FISHER-YATES helper
